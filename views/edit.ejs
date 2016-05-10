@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mongoose Dashboard</title>
+</head>
+<body>
+	<h3>Edit <%=dog.name%>'s profile</h3>
+	<hr>
+	<form action="/mongooses/<%=dog._id%>" method="post">
+		<p>Name: <input type="text" name="name" value="<%=dog.name%>"></p>
+		<p>Birthday: <input type="text" name="birthday" value="<%=dog.birthday%>"></p>
+		<button>Edit <%=dog.name%>'s profile</button>
+	</form>
+</body>
+</html>

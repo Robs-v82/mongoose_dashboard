@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mongoose Dashboard</title>
+</head>
+<body>
+	<h1>Hello World!</h1>
+	<hr>
+	<a href="/mongooses/new">Create new dog</a>
+	<hr>
+	<ul>
+	<% for(var dog in dogs) { %> 
+		<li><a href="/mongooses/<%=dogs[dog]._id%>"><%=dogs[dog].name%></a>, borned <%=dogs[dog].birthday%></li>
+		<a href="/mongooses/<%=dogs[dog]._id%>/edit">
+			<button>
+				Edit
+			</button>
+		</a>
+		<form action="/mongooses/<%=dogs[dog]._id%>/destroy" method="post">
+			<button>
+				Delete
+			</button>
+		</form>
+		<br>
+		<br>
+	<% } %>
+	</ul>
+</body>
+</html>
